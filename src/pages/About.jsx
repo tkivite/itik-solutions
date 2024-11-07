@@ -20,14 +20,19 @@ import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg";
 
 export default function About() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const text = "Leading the way in tech solutions, helping businesses grow."
 
   return (
     <div className="relative text-neutral-dark h-screen text-center">
+    <div className="fixed inset-0">
       <img
         src={Background1}
         alt="backgroundImage"
-        className="fixed brightness-50 h-screen sm:h-auto"
+        className="object-cover w-full h-full brightness-50"
       />
+      <div className="absolute inset-0 bg-black opacity-40"></div> {/* Dark overlay */}
+    </div>
+  
       <div className="absolute z-10">
         {/* Hero Section */}
         <section className="text-center p-[6.7rem] bg-transparent ">
@@ -40,9 +45,26 @@ export default function About() {
             >
               About Us
             </motion.h1>
-            <p className="text-neutral-light mt-4">
-              Leading the way in tech solutions, helping businesses grow.
-            </p>
+            <motion.p
+            className="text-lg text-neutral-light text-center mb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            {text.split("").map((letter, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  delay: index * 0.03, // Delay each letter's animation
+                  duration: 0.3,
+                }}
+              >
+                {letter}
+              </motion.span>
+            ))}
+          </motion.p>
           </div>
         </section>
 
@@ -102,7 +124,8 @@ export default function About() {
               className="p-6 bg-white/95 rounded-lg text-center shadow-lg"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -8}}
+              transition={{duration:0.5}}
             >
               <div className="h-12 w-12 mx-auto mb-4">{item.icon}</div>
               <h3 className="text-lg font-semibold text-neutral-text">
@@ -115,7 +138,7 @@ export default function About() {
 
         {/* Team Section */}
 
-        <section className="bg-primary-light pb-6 text-center pt-6">
+        <section className="bg-gradient-to-br from-blue-100 via-blue-200 to-blue-100 pb-6 text-center pt-6 ">
           <h2 className="text-3xl font-bold text-neutral-text mb-6">
             Our Team
           </h2>
@@ -289,7 +312,8 @@ export default function About() {
                 className="p-6 bg-white/95 rounded-lg text-center shadow-lg"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -8 }}
+                transition={{duration:0.5}}
               >
                 <div className="h-12 w-12 mx-auto mb-4">{item.icon}</div>{" "}
                 {/* Rendered the icon */}
@@ -318,7 +342,7 @@ export default function About() {
           </p>
           <div className="flex justify-center gap-4">
             <motion.button
-              className="bg-primary text-neutral-light px-6 py-2 rounded-full shadow-md"
+              className="bg-primary text-neutral-light px-6 py-2 rounded-full shadow-md hover:bg-accent"
               whileHover={{
                 scale: 1.05,
                 transition: { type: "spring", stiffness: 300, damping: 15 },
@@ -339,7 +363,27 @@ export default function About() {
             </motion.button>
           </div>
         </section>
+        
       </div>
+      <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className=" fixed bottom-6 right-2 p-3 bg-primary-dark text-white rounded-full shadow-lg hover:bg-primary transition-colors z-50"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 10l7-7m0 0l7 7m-7-7v18"
+            />
+          </svg>
+        </button>
     </div>
   );
 }
