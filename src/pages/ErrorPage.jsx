@@ -13,7 +13,7 @@ const ErrorPage = () => {
   return (
     <div className="from-blue-300 bg-gradient-to-br  via-blue-200 to-blue-300 h-screen flex flex-col justify-center items-center text-center">
       <Helmet>
-        <title>Itik Solutions | 404 Error</title>
+        <title>ITIK Solutions | 404 Error</title>
         <meta
           name="description"
           content="This is the error page of ITIK Solutions."

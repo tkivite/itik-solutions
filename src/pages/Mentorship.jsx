@@ -100,7 +100,7 @@ const Mentorship = () => {
   return (
     <div className="relative text-neutral-dark h-screen">
       <Helmet>
-        <title>Itik Solutions | Mentorship</title>
+        <title>ITIK Solutions | Mentorship</title>
         <meta
           name="description"
           content="This is the mentorship page of ITIK Solutions."
