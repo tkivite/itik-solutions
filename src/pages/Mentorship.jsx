@@ -110,7 +110,7 @@ const Mentorship = () => {
         {/* Dark overlay */}
       </div>
 
-      <div className="bg-neutral-white rounded-lg shadow-lg absolute z-10 w-full mx-auto">
+      <div className="absolute z-10 w-full mx-auto flex flex-col">
         <section className="text-center bg-transparent ">
           <motion.h1
             className="text-4xl font-bold text-neutral-light mt-20"

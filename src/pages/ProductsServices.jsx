@@ -114,7 +114,7 @@ const reasons = [
   "Maximized Efficiency with Scalable Systems",
 ];
 const text =
-  "Transform your business with innovative solutions designed to drive growth, efficiency, and success in the digital age";
+  "Transform your business with innovative solutions designed";
 
 const ProductsServices = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
