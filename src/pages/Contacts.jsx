@@ -49,7 +49,7 @@ const Contact = () => {
   const text = "Let’s Make Things Happen – Get in Touch!";
 
   return (
-    <div className="relative text-neutral-dark h-screen">
+    <div className="relative text-neutral-dark">
  
       <div className="fixed inset-0">
         <img

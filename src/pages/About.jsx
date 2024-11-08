@@ -27,7 +27,7 @@ export default function About() {
   const navigate = useNavigate();
 
   return (
-    <div className="relative text-neutral-dark h-screen ">
+    <div className="relative text-neutral-dark">
   
       <div className="fixed inset-0">
         <img

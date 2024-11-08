@@ -98,7 +98,7 @@ const Mentorship = () => {
     "Accelerate your career in tech with guidance from industry experts";
 
   return (
-    <div className="relative text-neutral-dark h-screen">
+    <div className="relative text-neutral-dark">
  
       <div className="fixed inset-0">
         <img
