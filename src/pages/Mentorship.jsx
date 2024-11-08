@@ -1,6 +1,4 @@
-/* import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg" */;
-
-import { useState } from "react";
+/* import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg" */ import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Users,
@@ -43,8 +41,6 @@ const Mentorship = () => {
       "Thank you for your interest in our tech mentorship program! We will contact you soon."
     );
   };
-
- 
 
   const offerings = [
     {
@@ -96,7 +92,6 @@ const Mentorship = () => {
 
   return (
     <div className="relative text-neutral-dark">
- 
       <div className="fixed inset-0">
         <img
           src="https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039879/sean-pollock-PhYq704ffdA-unsplash_fjdmrv.jpg"
@@ -109,10 +104,7 @@ const Mentorship = () => {
 
       <div className="absolute z-10 w-full mx-auto flex flex-col">
         <section className="text-center bg-transparent ">
-          <h1
-            className="text-4xl font-bold text-neutral-light mt-20"
-           
-          >
+          <h1 className="text-4xl font-bold text-neutral-light mt-20">
             Join Our Mentorship Program
           </h1>
           <motion.p
@@ -138,14 +130,13 @@ const Mentorship = () => {
         </section>
         <div className="w-full mx-auto ">
           <section className="grid md:grid-cols-2 gap-12 bg-neutral-light p-2 sm:p-4">
-            <div
-              
-              className="space-y-8"
-            >
-              <motion.section className="bg-white shadow-lg rounded-lg p-6" initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              
-              transition={{ duration: 0.3 }}>
+            <div className="space-y-8">
+              <motion.section
+                className="bg-white shadow-lg rounded-lg p-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
                   About Our Tech Mentorship
                 </h2>
@@ -171,7 +162,6 @@ const Mentorship = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       whileHover="hover"
-                        
                     >
                       <motion.div
                         className="flex-shrink-0"
