@@ -19,7 +19,7 @@ import {
   Shield,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+
 
 const slides = [
   {
@@ -72,13 +72,7 @@ const Home = () => {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 sm:p-24 pt-20 sm:pt-0 flex sm:items-center ">
-      <Helmet>
-        <title>ITIK Solutions | Home</title>
-        <meta
-          name="description"
-          content="This is the homepage of ITIK Solutions."
-        />
-      </Helmet>
+   
       {/* Background Illustration */}
       <div className="fixed inset-0 flex sm:justify-end ">
         <div className=" sm:max-w-[40%] w-full h-full relative">

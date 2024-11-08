@@ -16,7 +16,6 @@ import {
   Send,
 } from "lucide-react";
 import Footer from "../components/layout/Footer";
-import { Helmet } from "react-helmet-async";
 
 const Mentorship = () => {
   const [formData, setFormData] = useState({
@@ -100,13 +99,7 @@ const Mentorship = () => {
 
   return (
     <div className="relative text-neutral-dark h-screen">
-      <Helmet>
-        <title>ITIK Solutions | Mentorship</title>
-        <meta
-          name="description"
-          content="This is the mentorship page of ITIK Solutions."
-        />
-      </Helmet>
+ 
       <div className="fixed inset-0">
         <img
           src="https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039879/sean-pollock-PhYq704ffdA-unsplash_fjdmrv.jpg"

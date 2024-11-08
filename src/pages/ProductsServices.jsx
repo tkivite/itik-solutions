@@ -1,4 +1,3 @@
-
 /* import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg";
 import illustration2 from "../assets/trust.png";
 import illustration from "../assets/illustration1.png"; */
@@ -23,7 +22,7 @@ import {
 import Footer from "../components/layout/Footer";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+
 
 const productServices = [
   {
@@ -153,13 +152,7 @@ const ProductsServices = () => {
 
   return (
     <div className="relative text-neutral-dark h-screen  ">
-      <Helmet>
-        <title>ITIK Solutions | Mentorship</title>
-        <meta
-          name="description"
-          content="This is the mentorship page of ITIK Solutions."
-        />
-      </Helmet>
+ 
       <div className="fixed inset-0">
         <img
           src="https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039879/sean-pollock-PhYq704ffdA-unsplash_fjdmrv.jpg"

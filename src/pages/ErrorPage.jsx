@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/itikLogo.png";
-import { Helmet } from "react-helmet-async";
+
 
 const ErrorPage = () => {
   const navigate = useNavigate();
@@ -12,13 +12,7 @@ const ErrorPage = () => {
 
   return (
     <div className="from-blue-300 bg-gradient-to-br  via-blue-200 to-blue-300 h-screen flex flex-col justify-center items-center text-center">
-      <Helmet>
-        <title>ITIK Solutions | 404 Error</title>
-        <meta
-          name="description"
-          content="This is the error page of ITIK Solutions."
-        />
-      </Helmet>
+ 
       {/* Animated Error Icon */}
       <motion.div
         className="bg-transparent p-8 rounded-full mb-6"

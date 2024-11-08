@@ -11,7 +11,7 @@ import { Checkbox } from "../components/ui/checkbox";
 import { MessageSquare, Mail, Phone, MapPin, Users, Send } from "lucide-react";
 import Footer from "../components/layout/Footer";
 import { BsTwitterX } from "react-icons/bs";
-import { Helmet } from "react-helmet-async";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -50,13 +50,7 @@ const Contact = () => {
 
   return (
     <div className="relative text-neutral-dark h-screen">
-      <Helmet>
-        <title>ITIK Solutions | Contact Us</title>
-        <meta
-          name="description"
-          content="This is the contact of ITIK Solutions."
-        />
-      </Helmet>
+ 
       <div className="fixed inset-0">
         <img
           src="https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039879/sean-pollock-PhYq704ffdA-unsplash_fjdmrv.jpg"

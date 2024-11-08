@@ -20,7 +20,6 @@ import Person3 from "../assets/elizeu-dias-2EGNqazbAMk-unsplash.jpg";
 import Person4 from "../assets/prince-akachi-i2hoD-C2RUA-unsplash.jpg";
 import Footer from "../components/layout/Footer";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 
 export default function About() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -29,14 +28,7 @@ export default function About() {
 
   return (
     <div className="relative text-neutral-dark h-screen ">
-      <Helmet>
-        <title>ITIK Solutions | About Us</title>
-        <meta
-          name="description"
-          content="This is the About page of ITIK Solutions."
-        />
-        <link rel="icon" type="image/svg+xml" href="/itikLogo.svg" />
-      </Helmet>
+  
       <div className="fixed inset-0">
         <img
           src="https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039879/sean-pollock-PhYq704ffdA-unsplash_fjdmrv.jpg"
