@@ -44,10 +44,7 @@ const Mentorship = () => {
     );
   };
 
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
+ 
 
   const offerings = [
     {
@@ -142,9 +139,9 @@ const Mentorship = () => {
         <div className="w-full mx-auto ">
           <section className="grid md:grid-cols-2 gap-12 bg-neutral-light p-2 sm:p-4">
             <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              
               transition={{ duration: 0.5 }}
               className="space-y-8"
             >
@@ -171,11 +168,10 @@ const Mentorship = () => {
                     <motion.div
                       key={index}
                       className="flex  space-x-4 items-center"
-                      initial="hidden"
-                      animate="visible"
-                      variants={fadeIn}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
                       whileHover="hover"
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                        
                     >
                       <motion.div
                         className="flex-shrink-0"
@@ -232,9 +228,8 @@ const Mentorship = () => {
             </motion.div>
 
             <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               className="bg-white shadow-lg rounded-lg p-6"
             >

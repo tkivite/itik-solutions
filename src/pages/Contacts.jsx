@@ -12,7 +12,6 @@ import { MessageSquare, Mail, Phone, MapPin, Users, Send } from "lucide-react";
 import Footer from "../components/layout/Footer";
 import { BsTwitterX } from "react-icons/bs";
 
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -50,7 +49,6 @@ const Contact = () => {
 
   return (
     <div className="relative text-neutral-dark">
- 
       <div className="fixed inset-0">
         <img
           src="https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039879/sean-pollock-PhYq704ffdA-unsplash_fjdmrv.jpg"
@@ -62,10 +60,7 @@ const Contact = () => {
 
       <motion.div className="rounded-lg shadow-lg absolute z-10 w-full mx-auto">
         <section className="text-center bg-transparent">
-          <h2
-            className="text-4xl font-extrabold text-neutral-light mt-20"
-           
-          >
+          <h2 className="text-4xl font-extrabold text-neutral-light mt-20">
             Contact Us
           </h2>
           <motion.p
@@ -99,19 +94,11 @@ const Contact = () => {
             <div className="lg:flex">
               <div className="lg:w-1/2 xl:w-3/5 p-4 sm:p-8 flex flex-col justify-between">
                 <div>
-                  <motion.h2
-                    className="text-4xl font-extrabold text-gray-900 mb-6"
+                  <motion.p
+                    className="text-xl font-extrabold text-gray-900 mb-6"
                     initial={{ y: -50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8 }}
-                  >
-                    Contact Our Team
-                  </motion.h2>
-                  <motion.p
-                    className="text-lg text-gray-600 mb-8"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 0.2 }}
                   >
                     Looking for a service or have questions? We&apos;re here to
                     assist you!
