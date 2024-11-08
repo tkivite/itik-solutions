@@ -42,6 +42,11 @@ const Mentorship = () => {
     );
   };
 
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   const offerings = [
     {
       icon: Users,
@@ -130,11 +135,12 @@ const Mentorship = () => {
         </section>
         <div className="w-full mx-auto ">
           <section className="grid md:grid-cols-2 gap-12 bg-neutral-light p-2 sm:p-4">
-            <div className="space-y-8">
+            <motion.div className="space-y-8">
               <motion.section
                 className="bg-white shadow-lg rounded-lg p-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial="hidden"
+                animate="visible"
+                variants={fadeIn}
                 transition={{ duration: 0.5 }}
               >
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
@@ -159,9 +165,11 @@ const Mentorship = () => {
                     <motion.div
                       key={index}
                       className="flex  space-x-4 items-center"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      initial="hidden"
+                      animate="visible"
+                      variants={fadeIn}
                       whileHover="hover"
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
                     >
                       <motion.div
                         className="flex-shrink-0"
@@ -215,11 +223,12 @@ const Mentorship = () => {
                   ))}
                 </div>
               </section>
-            </div>
+            </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn}
               transition={{ duration: 0.5, delay: 0.4 }}
               className="bg-white shadow-lg rounded-lg p-6"
             >
