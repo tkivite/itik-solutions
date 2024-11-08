@@ -18,6 +18,7 @@ import efficiency from "../assets/efficiency.png";
 
 import security from "../assets/security.png";
 import customization from "../assets/customization.png";
+import { Helmet } from "react-helmet-async";
 
 const slides = [
   {
@@ -70,12 +71,19 @@ const Home = () => {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 sm:p-24 pt-20 sm:pt-0 flex sm:items-center ">
+      <Helmet>
+        <title>ITIK Solutions | Home</title>
+        <meta
+          name="description"
+          content="This is the homepage of ITIK Solutions."
+        />
+      </Helmet>
       {/* Background Illustration */}
       <div className="fixed inset-0 flex sm:justify-end ">
         <div className=" sm:max-w-[40%] w-full h-full relative">
           <AnimatePresence mode="wait">
             <motion.img
-              key={currentSlide} 
+              key={currentSlide}
               src={slides[currentSlide].image}
               alt="backgroundImage"
               className="object-contain w-full h-full brightness-50 object-bottom "
@@ -87,7 +95,6 @@ const Home = () => {
           </AnimatePresence>
         </div>
       </div>
-      
 
       <main className="max-w-7xl mx-auto px-6 py-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -99,8 +106,8 @@ const Home = () => {
               className="inline-flex items-center px-4 py-2 rounded-xl bg-blue-900/50 border border-blue-700/50 text-blue-200"
             >
               <span className="text-md sm:text-lg font-medium">
-                Welcome to ITIK Solutions. We empower businesses with innovative tech solutions to scale,
-                secure, and optimize operations.
+                Welcome to ITIK Solutions. We empower businesses with innovative
+                tech solutions to scale, secure, and optimize operations.
               </span>
             </motion.div>
 

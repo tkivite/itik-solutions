@@ -19,6 +19,7 @@ import Person4 from "../assets/prince-akachi-i2hoD-C2RUA-unsplash.jpg";
 import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg";
 import Footer from "../components/layout/Footer";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export default function About() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -27,6 +28,14 @@ export default function About() {
 
   return (
     <div className="relative text-neutral-dark h-screen ">
+      <Helmet>
+        <title>ITIK Solutions | About Us</title>
+        <meta
+          name="description"
+          content="This is the About page of ITIK Solutions."
+        />
+        <link rel="icon" type="image/svg+xml" href="/itikLogo.svg" />
+      </Helmet>
       <div className="fixed inset-0">
         <img
           src={Background1}

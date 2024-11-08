@@ -10,6 +10,7 @@ import { MessageSquare, Mail, Phone, MapPin, Users, Send } from "lucide-react";
 import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg";
 import Footer from "../components/layout/Footer";
 import { BsTwitterX } from "react-icons/bs";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -48,6 +49,13 @@ const Contact = () => {
 
   return (
     <div className="relative text-neutral-dark h-screen">
+      <Helmet>
+        <title>ITIK Solutions | Contact Us</title>
+        <meta
+          name="description"
+          content="This is the contact of ITIK Solutions."
+        />
+      </Helmet>
       <div className="fixed inset-0">
         <img
           src={Background1}
@@ -65,7 +73,7 @@ const Contact = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            Contact Us  
+            Contact Us
           </motion.h2>
           <motion.p
             className="text-lg text-neutral-light text-center mb-6"
@@ -79,7 +87,7 @@ const Contact = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{
-                  delay: index * 0.03, 
+                  delay: index * 0.03,
                   duration: 0.3,
                 }}
               >
@@ -112,7 +120,8 @@ const Contact = () => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.2 }}
                   >
-                    Looking for a service or have questions? We&apos;re here to assist you!
+                    Looking for a service or have questions? We&apos;re here to
+                    assist you!
                   </motion.p>
                 </div>
                 <motion.form

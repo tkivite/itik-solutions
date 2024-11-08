@@ -20,6 +20,7 @@ import {
 import Footer from "../components/layout/Footer";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const productServices = [
   {
@@ -149,6 +150,13 @@ const ProductsServices = () => {
 
   return (
     <div className="relative text-neutral-dark h-screen  ">
+      <Helmet>
+        <title>Itik Solutions | Mentorship</title>
+        <meta
+          name="description"
+          content="This is the mentorship page of ITIK Solutions."
+        />
+      </Helmet>
       <div className="fixed inset-0">
         <img
           src={Background1}
@@ -221,7 +229,13 @@ const ProductsServices = () => {
                           damping: 20,
                         }}
                       >
-                        <Icon className={`w-9 h-9 ${hoveredCard === index ?"text-accent":"text-primary-dark"} `} />
+                        <Icon
+                          className={`w-9 h-9 ${
+                            hoveredCard === index
+                              ? "text-accent"
+                              : "text-primary-dark"
+                          } `}
+                        />
                       </motion.div>
                       <h3 className="text-xl font-bold text-neutral-dark mb-3">
                         {service.title}

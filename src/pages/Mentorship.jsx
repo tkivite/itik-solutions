@@ -15,6 +15,7 @@ import {
   Send,
 } from "lucide-react";
 import Footer from "../components/layout/Footer";
+import { Helmet } from "react-helmet-async";
 
 const Mentorship = () => {
   const [formData, setFormData] = useState({
@@ -98,6 +99,13 @@ const Mentorship = () => {
 
   return (
     <div className="relative text-neutral-dark h-screen">
+      <Helmet>
+        <title>Itik Solutions | Mentorship</title>
+        <meta
+          name="description"
+          content="This is the mentorship page of ITIK Solutions."
+        />
+      </Helmet>
       <div className="fixed inset-0">
         <img
           src={Background1}
@@ -177,7 +185,15 @@ const Mentorship = () => {
                       whileHover="hover"
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                     >
-                      <motion.div className="flex-shrink-0" variants={{hover:{scaleX: -1}}} transition={{type:"spring", stiffness:300, damping:20}}>
+                      <motion.div
+                        className="flex-shrink-0"
+                        variants={{ hover: { scaleX: -1 } }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 20,
+                        }}
+                      >
                         <offering.icon className="h-6 w-6 text-primary" />
                       </motion.div>
                       <div>
@@ -443,9 +459,8 @@ const Mentorship = () => {
               ))}
             </div>
           </section>
-          
         </div>
-        <Footer/>
+        <Footer />
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className=" fixed bottom-6 right-2 p-3 bg-primary-dark text-white rounded-full shadow-lg hover:bg-primary transition-colors"
