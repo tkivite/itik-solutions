@@ -1,7 +1,7 @@
 import App from "./App";
 import About from "./pages/About";
 import Contact from "./pages/Contacts";
-/* import ErrorPage from "./pages/ErrorPage"; */
+ import ErrorPage from "./pages/ErrorPage"; 
 
 import Home from "./pages/Home";
 import Mentorship from "./pages/Mentorship";
@@ -11,7 +11,7 @@ import ProductsServices from "./pages/ProductsServices";
 const routes = [
     { path: "/", 
     element: <App /> ,
-/*     errorElement:<ErrorPage/>, */
+    errorElement:<ErrorPage/>,
         children:[
             {path:"/",element:<Home/>},
             {path:"/services",element:<ProductsServices/>},

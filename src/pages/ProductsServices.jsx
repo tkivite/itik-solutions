@@ -1,66 +1,154 @@
 import { motion } from "framer-motion";
 import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg";
+import illustration2 from "../assets/trust.png";
+import { Drawer } from "@mui/material";
 import {
   Monitor,
-  Target,
-  TrendingUp,
-  Network,
-  Search,
-  Smartphone,
+  CreditCard,
+  BookOpen,
+  UserCheck,
+  BarChart,
+  Wrench,
 } from "lucide-react";
 import illustration from "../assets/illustration1.png";
-import { FaCompass, FaPalette, FaCogs, FaRocket } from "react-icons/fa";
+import {
+  FaChalkboardTeacher,
+  FaEnvelope,
+  FaCreditCard,
+  FaUserCheck,
+} from "react-icons/fa";
+import Footer from "../components/layout/Footer";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const productServices = [
   {
+    title: "Branded Bulk Messaging",
+    description:
+      "Branded Bulk Messaging, Email Messaging, Instant and schedules, Comprehensive Service and Support",
     icon: Monitor,
-    title: "Web Development",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua",
+    additionalDetails: [
+      "Send personalized, bulk SMS and email messages with your brand's identity.",
+      "Choose from instant delivery or schedule messages for a specific time.",
+      "Track delivery rates, read statuses, and manage your contacts through an easy-to-use dashboard.",
+      "Get dedicated support to ensure smooth delivery and integration with your existing systems.",
+      "Ideal for marketing campaigns, customer engagement, reminders, and notifications.",
+    ],
   },
   {
-    icon: Target,
-    title: "Digital Marketing",
+    title: "Payment Integration",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua",
+      "Seamlessly integrate payment services like M-pesa, Paypal, local, and international banks",
+    icon: CreditCard,
+    additionalDetails: [
+      "Integrate popular payment gateways like M-Pesa, PayPal, Stripe, and local bank APIs for easy payments.",
+      "Enable both one-time payments and recurring subscriptions for various business needs.",
+      "Comprehensive security features, including encryption and fraud detection tools, to safeguard all transactions.",
+      "Easy API setup for developers with full documentation and support for different payment flows.",
+      "Multi-currency support for both local and international transactions.",
+    ],
   },
   {
-    icon: TrendingUp,
-    title: "Startup Solutions",
+    title: "Learning Management System (LMS)",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua",
+      "We deliver high-quality and scalable custom LMS solutions tailored to your learning needs.",
+    icon: BookOpen,
+    additionalDetails: [
+      "Custom-built learning environments designed for your organization's specific training needs.",
+      "Supports various content formats including videos, quizzes, and live sessions.",
+      "Mobile-friendly platform to ensure students and employees can access learning materials anytime, anywhere.",
+      "Detailed analytics and reporting for tracking learner progress and course effectiveness.",
+      "Scalable and flexible, allowing your LMS to grow as your learning requirements evolve.",
+    ],
   },
   {
-    icon: Network,
-    title: "Networking Services",
+    title: "Event Registration & Monitoring",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua",
+      "Manage event registrations efficiently with delegates being able to register from anywhere",
+    icon: UserCheck,
+    additionalDetails: [
+      "Online event registration forms that allow participants to sign up from any device, anytime.",
+      "Automatic confirmation emails and reminder notifications for attendees.",
+      "Real-time monitoring of event registrations, with reporting tools for attendee demographics.",
+      "Flexible pricing models to offer free or paid registrations with payment gateway integration.",
+      "Integration with event management tools for easy check-in and attendee tracking during the event.",
+    ],
   },
   {
-    icon: Search,
-    title: "SEO Optimization",
+    title: "Transaction Monitoring",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua",
+      "Transaction Monitoring systems for financial institutions, offering improved risk management and regulatory compliance",
+    icon: BarChart,
+    additionalDetails: [
+      "Automated transaction tracking to identify and flag suspicious activity in real-time.",
+      "Customizable risk detection models that fit the specific regulatory and compliance requirements of your institution.",
+      "Comprehensive reporting tools for audit trails and regulatory compliance reporting.",
+      "Integration with core banking systems for seamless data flow and monitoring.",
+      "Real-time alerts and notifications for any potential security risks or compliance issues.",
+    ],
   },
   {
-    icon: Smartphone,
-    title: "Apps Development",
+    title: "ETC",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua",
+      "We work closely with clients to develop custom software based on their specific needs and requirements",
+    icon: Wrench,
+    additionalDetails: [
+      "Collaborative process to understand your business goals and build tailored software solutions.",
+      "From web and mobile applications to enterprise-level systems, we build solutions for a wide range of industries.",
+      "Scalable solutions that grow with your business, with ongoing support and maintenance options.",
+      "End-to-end software development including planning, design, development, testing, and deployment.",
+      "Experienced developers, designers, and project managers dedicated to delivering the best results for your needs.",
+    ],
   },
-];
-const services = [
-  "Remote IT Assistance",
-  "Cloud Services",
-  "Managed IT Service",
-  "IT Security Services",
-  "Practice IT Management",
-  "Solving IT Problems",
 ];
 
+const reasons = [
+  "Expert Support Anytime, Anywhere",
+  "Cutting-Edge Technology for Business Growth",
+  "Simplified Business Operations with Automation",
+  "Tailored Solutions for Diverse Needs",
+  "Proven Track Record of Successful Implementations",
+  "Maximized Efficiency with Scalable Systems",
+];
+const text =
+  "Transform your business with innovative solutions designed to drive growth, efficiency, and success in the digital age";
+
 const ProductsServices = () => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [drawerContent, setDrawerContent] = useState({});
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const navigate = useNavigate();
+
+  const handleDrawerOpen = (service) => {
+    setDrawerContent(service);
+    setIsDrawerOpen(true);
+  };
+
+  const handleMouseEnter = (index) => {
+    setHoveredCard(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredCard(null);
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+  };
+
   return (
-    <div className="relative text-neutral-dark h-screen text-center ">
+    <div className="relative text-neutral-dark h-screen  ">
       <div className="fixed inset-0">
         <img
           src={Background1}
@@ -72,90 +160,205 @@ const ProductsServices = () => {
       </div>
 
       <div className="absolute z-10 w-full mx-auto flex flex-col">
-        <section className="text-center p-28 bg-transparent">
+        <section className="text-center bg-transparent">
           <motion.h1
-            className="text-4xl font-bold text-neutral-light"
+            className="text-4xl font-bold text-neutral-light mt-20"
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
             Our Products and Services
           </motion.h1>
+          <motion.p
+            className="text-lg text-neutral-light text-center mb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            {text.split("").map((letter, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  delay: index * 0.02, // Delay each letter's animation
+                  duration: 0.2,
+                }}
+              >
+                {letter}
+              </motion.span>
+            ))}
+          </motion.p>
         </section>
         <section className="bg-neutral-light pb-6 text-center pt-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-3/4 mx-auto ">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-2 sm:w-[95%] mx-auto "
+            initial="hidden"
+            animate="show"
+            variants={containerVariants}
+          >
             {productServices.map((service, index) => {
               const Icon = service.icon;
               return (
-                <motion.div
-                  key={index}
-                  className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-700 hover:-translate-y-3 ease-in-out"
-                  whileHover="hover"
-                >
-                  <div className="flex flex-col items-start">
-                    <motion.div
-                      className="p-3 rounded-lg mb-4"
-                      variants={{ hover: { scaleX: -1 } }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 20,
-                      }}
-                    >
-                      <Icon className="w-9 h-9 text-primary-dark" />
-                    </motion.div>
-                    <h3 className="text-xl font-bold text-neutral-dark mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-neutral mb-4">{service.description}</p>
-                    <a
-                      href="#"
-                      className="inline-flex items-center text-primary hover:text-primary-dark font-medium"
-                    >
-                      Read More
-                      <svg
-                        className="w-4 h-4 ml-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                <div key={index}>
+                  <motion.div
+                    key={index}
+                    className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-700 ease-in-out cursor-pointer"
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={() => handleDrawerOpen(service)}
+                    variants={cardVariants}
+                  >
+                    <div className="flex flex-col items-start">
+                      <motion.div
+                        className="p-3 rounded-lg mb-4"
+                        animate={{
+                          scaleX: hoveredCard === index ? -1 : 1,
+                        }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 20,
+                        }}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                </motion.div>
+                        <Icon className={`w-9 h-9 ${hoveredCard === index ?"text-accent":"text-primary-dark"} `} />
+                      </motion.div>
+                      <h3 className="text-xl font-bold text-neutral-dark mb-3">
+                        {service.title}
+                      </h3>
+                      <p className="text-neutral mb-4 text-left">
+                        {service.description}
+                      </p>
+                      <a
+                        href="#"
+                        className="inline-flex items-center text-primary hover:text-primary-dark font-medium"
+                        onClick={() => handleDrawerOpen(service)}
+                      >
+                        Read More
+                        <svg
+                          className="w-4 h-4 ml-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </motion.div>
+                </div>
               );
             })}
-          </div>
+          </motion.div>
         </section>
+        <Drawer
+          anchor="right"
+          open={isDrawerOpen}
+          onClose={() => setIsDrawerOpen(false)}
+        >
+          <motion.div
+            className="w-96 p-6 bg-white shadow-lg rounded-lg h-screen"
+            initial={{ x: "20%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "20%" }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <motion.h2
+              className="text-2xl font-semibold text-neutral-dark mb-4 flex items-center gap-2 border-b-2 border-b-black text-primary"
+              initial={{ y: -30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+            >
+              {drawerContent.icon ? (
+                React.createElement(drawerContent.icon, {
+                  className: "w-9 h-9 text-primary-dark",
+                })
+              ) : (
+                <div>No icon available</div>
+              )}
+              {drawerContent.title}
+            </motion.h2>
+            <motion.p
+              className="text-neutral-dark mb-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+            >
+              {drawerContent.description}
+            </motion.p>
+            <div className="mt-6 space-y-4">
+              <motion.div
+                className="bg-neutral-light p-4 rounded-lg shadow-sm"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+              >
+                <h3 className="text-lg font-semibold text-neutral-dark">
+                  Additional Information
+                </h3>
+                <p className="text-neutral-dark">
+                  {drawerContent.additionalDetails}
+                </p>
+              </motion.div>
+            </div>
+            <div className="flex gap-2 justify-center ">
+              <motion.div
+                className="mt-6 flex justify-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+              >
+                <button
+                  onClick={() => navigate("/contact")} //
+                  className="bg-primary text-white py-2 px-4 rounded-lg shadow-lg hover:bg-primary-dark transition"
+                >
+                  Get Started Now
+                </button>
+              </motion.div>
+              <motion.div
+                className="mt-6 flex justify-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+              >
+                <button
+                  onClick={() => setIsDrawerOpen(false)} //
+                  className="bg-neutral-light text-neutral-dark py-2 px-4 rounded-lg shadow-lg hover:bg-gray-200 transition"
+                >
+                  Back to Services
+                </button>
+              </motion.div>
+            </div>
+          </motion.div>
+        </Drawer>
 
-        <section className="grid lg:grid-cols-2 gap-8 mb-20 bg-gradient-to-br from-blue-100 via-blue-200 to-blue-100 items-center">
+        <section className="grid lg:grid-cols-2 gap-8 mb-12 bg-gradient-to-br from-blue-100 via-blue-200 to-blue-100 items-center">
           <div className="order-2 lg:order-1 flex justify-center">
             <img
               src={illustration}
               alt="IT Services Illustration"
-              className="w-[35rem] h-auto"
+              className="md:w-[35rem] h-auto"
             />
           </div>
           <div className="order-1 lg:order-2 p-4">
             <div className="space-y-6">
-              <span className="text-primary font-medium">
-                WHY CHOOSE US?
-              </span>
+              <span className="text-primary font-medium">WHY CHOOSE US?</span>
               <h2 className="text-4xl font-bold text-neutral-dark">
-                Safeguard Your Brand with Cyber Security and IT Solutions
+                Empower Your Business with Innovative IT Solutions
               </h2>
               <p className="text-neutral">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                We offer tailored IT services to help streamline your business
+                operations, enhance security, and drive growth. Our solutions
+                are designed with your needs in mind, whether you&apos;re
+                managing payments, messaging, or monitoring transactions.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
-                {services.map((service, index) => (
+                {reasons.map((reason, index) => (
                   <motion.div
                     key={index}
                     className="flex items-center p-4 rounded-lg border border-gray-300 bg-gradient-to-r from-violet-50 via-transparent to-primary-dark bg-[length:200%_100%] bg-left transition-all duration-500 ease-in-out"
@@ -164,46 +367,49 @@ const ProductsServices = () => {
                     transition={{ duration: 0.5 }}
                   >
                     <div className="w-1 h-4 bg-primary mr-3" />
-                    <span className="text-neutral-dark">{service}</span>
+                    <div>
+                      <span className="text-neutral-dark font-semibold">
+                        {reason}
+                      </span>
+                    </div>
                   </motion.div>
                 ))}
               </div>
             </div>
           </div>
         </section>
+
         <section className="pb-6">
           <h2 className="text-3xl font-bold text-neutral-light mb-6 text-center">
-            Our Work Process
+            Client Success Stories
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 p-4 w-[95%] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 p-2 sm:p-4 w-full sm:w-[95%] mx-auto">
             {[
               {
-                title: "Discover",
+                title: "Efficient Messaging for EduConnect",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua.",
-
-                icon: <FaCompass className="text-primary-dark text-4xl" />, 
+                  "EduConnect improved communication across campuses with our Branded Bulk Messaging solution, reaching students and staff instantly through scheduled notifications.",
+                icon: <FaEnvelope className="text-primary-dark text-4xl" />,
               },
               {
-                title: "Design & Development",
+                title: "Seamless Payment Integration for ShopEasy",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua.",
-
-                icon: <FaPalette className="text-primary-dark text-4xl" />, 
+                  "ShopEasy boosted their online sales by 40% after implementing our seamless Payment Integration with M-Pesa, PayPal, and local bank services.",
+                icon: <FaCreditCard className="text-primary-dark text-4xl" />,
               },
               {
-                title: "Install & Testing",
+                title: "Custom LMS for BrightFuture Academy",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua.",
-
-                icon: <FaCogs className="text-primary-dark text-4xl" />, 
+                  "BrightFuture Academy enhanced their online learning environment by adopting our scalable and customized Learning Management System (LMS), benefiting over 20,000 students.",
+                icon: (
+                  <FaChalkboardTeacher className="text-primary-dark text-4xl" />
+                ),
               },
               {
-                title: "Project Delivery",
+                title: "Streamlined Event Registration for TechFest",
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua.",
-
-                icon: <FaRocket className="text-primary-dark text-4xl" />, 
+                  "TechFest improved their attendee experience with our Event Registration & Monitoring system, enabling users to register and manage their schedules from anywhere.",
+                icon: <FaUserCheck className="text-primary-dark text-4xl" />,
               },
             ].map((item, index) => (
               <motion.div
@@ -211,10 +417,10 @@ const ProductsServices = () => {
                 className="p-6 bg-white/95 rounded-lg text-center shadow-lg"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.3 }}
               >
-                <div className="h-12 w-12 mx-auto mb-4">{item.icon}</div>{" "}
-                
+                <div className="h-12 w-12 mx-auto mb-4">{item.icon}</div>
                 <h3 className="text-lg font-semibold text-neutral-text">
                   {item.title}
                 </h3>
@@ -223,27 +429,94 @@ const ProductsServices = () => {
             ))}
           </div>
         </section>
-        <section className="grid lg:grid-cols-2 gap-12 items-center bg-neutral-light">
-          <div className="space-y-6 flex justify-center flex-col items-center">
+
+        <section className="grid lg:grid-cols-2 gap-12 items-center bg-neutral-light p-2 sm:p-4">
+          <div className="space-y-6 flex justify-center flex-col items-center p-2 sm:p-0 sm:w-[90%] mx-auto">
             <span className="text-primary font-medium">WHY TRUST US?</span>
-            <h2 className="text-4xl font-bold text-gray-900">
-              Achieve Digital Transformation For Your Retail Business Services
+            <h2 className="text-4xl font-bold text-gray-900 ">
+              Empowering Retail Businesses Through Digital Transformation
             </h2>
             <p className="text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Our track record speaks for itself. We provide custom, scalable
+              digital solutions that help retail businesses thrive. Here’s why
+              clients trust us to lead their digital transformation:
             </p>
+            <ul className="text-left space-y-3 text-gray-600">
+              <motion.li
+                className="flex sm:flex-row flex-col p-4 rounded-lg border border-gray-300 bg-gradient-to-r from-violet-50 via-transparent to-primary-dark bg-[length:200%_100%] bg-left transition-all duration-500 ease-in-out"
+                initial={{ backgroundPosition: "left" }}
+                whileHover={{ backgroundPosition: "right" }}
+                transition={{ duration: 0.5 }}
+              >
+                <span className="font-bold whitespace-nowrap mr-2 text-primary">
+                  🌍 Proven Success
+                </span>
+                <span className="text-neutral-dark font-semibold">
+                  {" "}
+                  Trusted by top brands across retail, we’ve successfully
+                  digitized operations for businesses large and small, improving
+                  efficiency and customer experience.
+                </span>
+              </motion.li>
+              <motion.li
+                className="flex p-4 sm:flex-row flex-col rounded-lg border border-gray-300 bg-gradient-to-r from-violet-50 via-transparent to-primary-dark bg-[length:200%_100%] bg-left transition-all duration-500 ease-in-out"
+                initial={{ backgroundPosition: "left" }}
+                whileHover={{ backgroundPosition: "right" }}
+                transition={{ duration: 0.5 }}
+              >
+                <span className="font-bold whitespace-nowrap mr-2 text-primary">
+                  🔒 Data Security{" "}
+                </span>{" "}
+                <span className="text-neutral-dark font-semibold">
+                  We prioritize security, providing robust transaction
+                  monitoring systems and secure payment integrations, ensuring
+                  your data and transactions are safe.
+                </span>
+              </motion.li>
+              <motion.li
+                className="flex p-4 sm:flex-row flex-col rounded-lg border border-gray-300 bg-gradient-to-r from-violet-50 via-transparent to-primary-dark bg-[length:200%_100%] bg-left transition-all duration-500 ease-in-out"
+                initial={{ backgroundPosition: "left" }}
+                whileHover={{ backgroundPosition: "right" }}
+                transition={{ duration: 0.5 }}
+              >
+                <span className="font-bold whitespace-nowrap mr-2 text-primary">
+                  🚀 Innovation-Driven
+                </span>{" "}
+                <span className="text-neutral-dark font-semibold">
+                  We leverage the latest technologies to help you stay ahead of
+                  the competition—be it through our custom LMS solutions,
+                  payment integrations, or event management systems.
+                </span>
+              </motion.li>
+
+              <motion.li
+                className="flex p-4 sm:flex-row flex-col rounded-lg border border-gray-300 bg-gradient-to-r from-violet-50 via-transparent to-primary-dark bg-[length:200%_100%] bg-left transition-all duration-500 ease-in-out"
+                initial={{ backgroundPosition: "left" }}
+                whileHover={{ backgroundPosition: "right" }}
+                transition={{ duration: 0.5 }}
+              >
+                <span className="font-bold whitespace-nowrap mr-2 text-primary">
+                  🤝 Long-Term Partnership
+                </span>{" "}
+                <span className="text-neutral-dark font-semibold">
+                  We don’t just offer services; we build long-term partnerships.
+                  Our ongoing support ensures that your business evolves as
+                  technology progresses.
+                </span>
+              </motion.li>
+            </ul>
           </div>
           <div className="flex justify-center">
             <img
-              src="https://file.removal.ai/preview/c5cd2bc2-0a64-49a0-8ada-443d2b7983b1-pngtreepeople-putting-together-a-series_7537093-1.png"
+              src={illustration2}
               alt="Digital Transformation Illustration"
-              className="w-[35rem] h-auto"
+              className="md:w-[35rem] h-auto"
             />
           </div>
         </section>
 
-        {/* Scroll to Top Button */}
+        <Footer />
+
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className=" fixed bottom-6 right-2 p-3 bg-primary-dark text-white rounded-full shadow-lg hover:bg-primary transition-colors"

@@ -11,10 +11,10 @@ import {
   Network,
   Briefcase,
   Award,
-  Rocket,
   Target,
   Send,
 } from "lucide-react";
+import Footer from "../components/layout/Footer";
 
 const Mentorship = () => {
   const [formData, setFormData] = useState({
@@ -109,9 +109,9 @@ const Mentorship = () => {
       </div>
 
       <div className="bg-neutral-white rounded-lg shadow-lg absolute z-10 w-full mx-auto">
-        <section className="text-center p-[6.7rem] bg-transparent ">
+        <section className="text-center bg-transparent ">
           <motion.h1
-            className="text-4xl font-bold text-neutral-light"
+            className="text-4xl font-bold text-neutral-light mt-20"
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -130,7 +130,7 @@ const Mentorship = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{
-                  delay: index * 0.03, // Delay each letter's animation
+                  delay: index * 0.03,
                   duration: 0.3,
                 }}
               >
@@ -140,7 +140,7 @@ const Mentorship = () => {
           </motion.p>
         </section>
         <div className="w-full mx-auto ">
-          <section className="grid md:grid-cols-2 gap-12 bg-neutral-light p-4">
+          <section className="grid md:grid-cols-2 gap-12 bg-neutral-light p-2 sm:p-4">
             <motion.div
               initial="hidden"
               animate="visible"
@@ -397,11 +397,11 @@ const Mentorship = () => {
               </form>
             </motion.div>
           </section>
-          <section className="pb-6 p-2">
+          <section className="pb-6 sm:p-2">
             <h2 className="text-3xl font-bold text-neutral-light mb-6 text-center">
               Why Choose Our Tech Mentorship?
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4 w-[95%] mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:p-4 w-[95%] mx-auto">
               {[
                 {
                   title: "Industry-Leading Mentors",
@@ -443,7 +443,9 @@ const Mentorship = () => {
               ))}
             </div>
           </section>
+          
         </div>
+        <Footer/>
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className=" fixed bottom-6 right-2 p-3 bg-primary-dark text-white rounded-full shadow-lg hover:bg-primary transition-colors"
