@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is the frontend for **ITIK Solutions**, a company specializing in providing tech solutions. The website is built with Vite, React, Tailwind CSS, and Framer Motion, delivering a fast, responsive, and visually engaging user experience. This project serves as a showcase of the company's details, services, mentorship opportunities, and contact information.
+This is the front-end for **ITIK Solutions**, a company specializing in providing tech solutions. The website is built with Vite, React, Tailwind CSS, and Framer Motion, delivering a fast, responsive, and visually engaging user experience. This project serves as a showcase of the company's details, services, mentorship opportunities, and contact information.
 
 
 ## Tech Stack
