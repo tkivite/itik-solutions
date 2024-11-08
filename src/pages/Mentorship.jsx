@@ -138,14 +138,14 @@ const Mentorship = () => {
         </section>
         <div className="w-full mx-auto ">
           <section className="grid md:grid-cols-2 gap-12 bg-neutral-light p-2 sm:p-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+            <div
               
-              transition={{ duration: 0.5 }}
               className="space-y-8"
             >
-              <section className="bg-white shadow-lg rounded-lg p-6">
+              <motion.section className="bg-white shadow-lg rounded-lg p-6" initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              
+              transition={{ duration: 0.3 }}>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
                   About Our Tech Mentorship
                 </h2>
@@ -157,7 +157,7 @@ const Mentorship = () => {
                   skills needed to succeed in the fast-paced world of
                   technology.
                 </p>
-              </section>
+              </motion.section>
 
               <section className="bg-white shadow-lg rounded-lg p-6">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -225,7 +225,7 @@ const Mentorship = () => {
                   ))}
                 </div>
               </section>
-            </motion.div>
+            </div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
