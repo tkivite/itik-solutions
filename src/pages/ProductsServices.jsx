@@ -1,6 +1,9 @@
-import { motion } from "framer-motion";
-import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg";
+
+/* import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg";
 import illustration2 from "../assets/trust.png";
+import illustration from "../assets/illustration1.png"; */
+
+import { motion } from "framer-motion";
 import { Drawer } from "@mui/material";
 import {
   Monitor,
@@ -10,7 +13,7 @@ import {
   BarChart,
   Wrench,
 } from "lucide-react";
-import illustration from "../assets/illustration1.png";
+
 import {
   FaChalkboardTeacher,
   FaEnvelope,
@@ -159,7 +162,7 @@ const ProductsServices = () => {
       </Helmet>
       <div className="fixed inset-0">
         <img
-          src={Background1}
+          src="https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039879/sean-pollock-PhYq704ffdA-unsplash_fjdmrv.jpg"
           alt="backgroundImage"
           className="object-cover w-full h-full brightness-50"
         />
@@ -354,7 +357,7 @@ const ProductsServices = () => {
         <section className="grid lg:grid-cols-2 gap-8 mb-12 bg-gradient-to-br from-blue-100 via-blue-200 to-blue-100 items-center">
           <div className="order-2 lg:order-1 flex justify-center">
             <img
-              src={illustration}
+              src="https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039813/illustration1_gfgj2n.png"
               alt="IT Services Illustration"
               className="md:w-[35rem] h-auto"
             />
@@ -522,7 +525,7 @@ const ProductsServices = () => {
           </div>
           <div className="flex justify-center">
             <img
-              src={illustration2}
+              src="https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039942/trust_yoxs1p.png"
               alt="Digital Transformation Illustration"
               className="md:w-[35rem] h-auto"
             />

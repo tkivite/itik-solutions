@@ -1,3 +1,10 @@
+/* import innovation from "../assets/innovation.png";
+import scalability from "../assets/scalability.png";
+import efficiency from "../assets/efficiency.png";
+
+import security from "../assets/security.png";
+import customization from "../assets/customization.png"; */
+
 import { useEffect, useState } from "react";
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,12 +19,6 @@ import {
   Shield,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import innovation from "../assets/innovation.png";
-import scalability from "../assets/scalability.png";
-import efficiency from "../assets/efficiency.png";
-
-import security from "../assets/security.png";
-import customization from "../assets/customization.png";
 import { Helmet } from "react-helmet-async";
 
 const slides = [
@@ -26,35 +27,35 @@ const slides = [
     description:
       "Embrace cutting-edge technology to stay ahead of the competition. Our innovative solutions are designed to transform your business operations, bringing fresh ideas and unique approaches.",
     icon: Code,
-    image: innovation,
+    image: "https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039851/innovation_vti90i.png",
   },
   {
     title: "Scalability",
     description:
       "Build your business with growth in mind. Our solutions ensure your systems can scale effortlessly as your needs expand, supporting your journey from startup to enterprise.",
     icon: Server,
-    image: scalability,
+    image: "https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039864/scalability_yftupt.png",
   },
   {
     title: "Efficiency",
     description:
       "Streamline operations and optimize performance with smart solutions. Reduce costs and time, while increasing productivity with automated and intuitive tools.",
     icon: BarChart,
-    image: efficiency,
+    image: "https://res.cloudinary.com/dkwu8nd4d/image/upload/v1731039799/efficiency_a4y1m4.png",
   },
   {
     title: "Security",
     description:
       "Protect your assets and customer data with robust security measures. Our solutions provide peace of mind, ensuring your business and users are always safe from evolving threats.",
     icon: Shield,
-    image: security,
+    image: "https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039894/security_xyqgtg.png",
   },
   {
     title: "Customization",
     description:
       "Tailor your solutions to fit your unique business needs. From custom software to personalized user experiences, we create solutions that work exactly how you need them to.",
     icon: Wrench,
-    image: customization,
+    image: "https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039783/customization_zzxdwx.png",
   },
 ];
 
@@ -90,7 +91,7 @@ const Home = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5 }}
             />
           </AnimatePresence>
         </div>

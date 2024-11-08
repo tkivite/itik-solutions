@@ -1,3 +1,5 @@
+/* import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg"; */
+
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
@@ -16,7 +18,6 @@ import Person1 from "../assets/bansah-photography-mIFiMZlh3Zg-unsplash.jpg";
 import Person2 from "../assets/tara-urso-VxS-jzGRopM-unsplash.jpg";
 import Person3 from "../assets/elizeu-dias-2EGNqazbAMk-unsplash.jpg";
 import Person4 from "../assets/prince-akachi-i2hoD-C2RUA-unsplash.jpg";
-import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg";
 import Footer from "../components/layout/Footer";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -38,7 +39,7 @@ export default function About() {
       </Helmet>
       <div className="fixed inset-0">
         <img
-          src={Background1}
+          src="https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039879/sean-pollock-PhYq704ffdA-unsplash_fjdmrv.jpg"
           alt="backgroundImage"
           className="object-cover w-full h-full brightness-50"
         />

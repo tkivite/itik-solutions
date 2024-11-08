@@ -1,6 +1,7 @@
+/* import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg" */;
+
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg";
 import {
   Users,
   Lightbulb,
@@ -108,7 +109,7 @@ const Mentorship = () => {
       </Helmet>
       <div className="fixed inset-0">
         <img
-          src={Background1}
+          src="https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039879/sean-pollock-PhYq704ffdA-unsplash_fjdmrv.jpg"
           alt="backgroundImage"
           className="object-cover w-full h-full brightness-50"
         />

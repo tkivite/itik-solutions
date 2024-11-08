@@ -1,3 +1,5 @@
+/* import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg"; */
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaFacebook, FaPaperPlane } from "react-icons/fa";
@@ -7,7 +9,6 @@ import { Label } from "../components/ui/label";
 import { Textarea } from "../components/ui/textarea";
 import { Checkbox } from "../components/ui/checkbox";
 import { MessageSquare, Mail, Phone, MapPin, Users, Send } from "lucide-react";
-import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg";
 import Footer from "../components/layout/Footer";
 import { BsTwitterX } from "react-icons/bs";
 import { Helmet } from "react-helmet-async";
@@ -58,7 +59,7 @@ const Contact = () => {
       </Helmet>
       <div className="fixed inset-0">
         <img
-          src={Background1}
+          src="https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039879/sean-pollock-PhYq704ffdA-unsplash_fjdmrv.jpg"
           alt="backgroundImage"
           className="object-cover w-full h-full brightness-50"
         />
