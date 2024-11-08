@@ -114,7 +114,7 @@ const reasons = [
   "Maximized Efficiency with Scalable Systems",
 ];
 const text =
-  "Transform your business with innovative solutions designed";
+  "Transform your business with innovative solutions.";
 
 const ProductsServices = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -165,14 +165,12 @@ const ProductsServices = () => {
 
       <div className="absolute z-10 w-full mx-auto flex flex-col">
         <section className="text-center bg-transparent">
-          <motion.h1
+          <h1
             className="text-4xl font-bold text-neutral-light mt-20"
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
+           
           >
             Our Products and Services
-          </motion.h1>
+          </h1>
           <motion.p
             className="text-lg text-neutral-light text-center mb-6"
             initial={{ opacity: 0 }}

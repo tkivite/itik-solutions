@@ -62,14 +62,12 @@ const Contact = () => {
 
       <motion.div className="rounded-lg shadow-lg absolute z-10 w-full mx-auto">
         <section className="text-center bg-transparent">
-          <motion.h2
+          <h2
             className="text-4xl font-extrabold text-neutral-light mt-20"
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
+           
           >
             Contact Us
-          </motion.h2>
+          </h2>
           <motion.p
             className="text-lg text-neutral-light text-center mb-6"
             initial={{ opacity: 0 }}
