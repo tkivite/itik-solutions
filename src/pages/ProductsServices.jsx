@@ -91,7 +91,7 @@ const productServices = [
     ],
   },
   {
-    title: "ETC",
+    title: "Custom Solutions",
     description:
       "We work closely with clients to develop custom software based on their specific needs and requirements",
     icon: Wrench,
