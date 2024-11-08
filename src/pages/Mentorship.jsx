@@ -145,7 +145,7 @@ const Mentorship = () => {
               initial="hidden"
               animate="visible"
               variants={fadeIn}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
               className="space-y-8"
             >
               <section className="bg-white shadow-lg rounded-lg p-6">
