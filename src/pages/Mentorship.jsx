@@ -42,10 +42,7 @@ const Mentorship = () => {
     );
   };
 
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
+ 
 
   const offerings = [
     {
@@ -140,7 +137,7 @@ const Mentorship = () => {
                 className="bg-white shadow-lg rounded-lg p-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.3, ease:"easeInOut" }}
               >
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
                   About Our Tech Mentorship

@@ -274,7 +274,7 @@ const ProductsServices = () => {
             initial={{ x: "20%" }}
             animate={{ x: 0 }}
             exit={{ x: "20%" }}
-            transition={{ type: "spring", stiffness: 300 }}
+            transition={{ type: "spring", stiffness: 50 }}
           >
             <motion.h2
               className="text-2xl font-semibold text-neutral-dark mb-4 flex items-center gap-2 border-b-2 border-b-black text-primary"
