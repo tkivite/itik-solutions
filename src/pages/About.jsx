@@ -139,7 +139,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:w-3/4 mx-auto">
             {[
               {
-                name: "John Doe",
+                name: "John Otieno",
                 position: "Developer",
                 image: Person1,
                 socialLinks: {
@@ -149,7 +149,7 @@ export default function About() {
                 },
               },
               {
-                name: "Jane Smith",
+                name: "Janet Katana",
                 position: "Designer",
                 image: Person2,
                 socialLinks: {
@@ -159,7 +159,7 @@ export default function About() {
                 },
               },
               {
-                name: "Alice Johnson",
+                name: "Alice Nafula",
                 position: "Project Manager",
                 image: Person4,
                 socialLinks: {
@@ -169,7 +169,7 @@ export default function About() {
                 },
               },
               {
-                name: "Bob Brown",
+                name: "Bob Msafiri",
                 position: "QA Engineer",
                 image: Person3,
                 socialLinks: {
