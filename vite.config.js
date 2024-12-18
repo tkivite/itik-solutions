@@ -12,4 +12,12 @@ export default {
       '@': `${__dirname}/src`, // Define alias for @ to point to the src folder
     },
   },
+   server: {
+      port: 3009, // Custom development port (changed from default 5173)
+      strictPort: true, // Fail if port is in use
+    },
+    preview: {
+      port: 30011, // Custom preview port (changed from default 4173)
+      strictPort: true,
+    }
 };
