@@ -289,9 +289,9 @@ const Mentorship = () => {
                   ].map((item, index) => (
                     <motion.div
                       key={index}
-                      className="flex flex-col p-4 rounded-lg border border-gray-300 bg-white"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
+                      className="flex flex-col p-2 rounded-lg border border-gray-300 bg-gradient-to-r from-violet-50 via-transparent to-primary-dark bg-[length:200%_100%] bg-left transition-all duration-500 ease-in-out"
+                      initial={{ backgroundPosition: "left" }}
+                      whileHover={{ backgroundPosition: "right" }}
                       transition={{ duration: 0.5 }}
                       onClick={() => handleToggle(index)}
                     >
@@ -318,7 +318,7 @@ const Mentorship = () => {
                       {/* Show this section only if this module is expanded */}
                       {expandedModule === index && (
                         <motion.div
-                          className="mt-2"
+                          className="mt-2 pl-2 sm:pl-4"
                           initial={{ height: 0 }}
                           animate={{ height: "auto" }}
                           transition={{ duration: 0.3 }}
@@ -530,7 +530,7 @@ const Mentorship = () => {
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
                   Frequently Asked Questions
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-4 cursor-pointer">
                   {faqItems.map((item, index) => (
                     <motion.div
                       key={index}
