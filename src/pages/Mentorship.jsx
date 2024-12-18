@@ -524,7 +524,7 @@ const Mentorship = () => {
                 </motion.button>
               </form>
               <section className="bg-white shadow-md rounded-lg sm:p-6 p-3 mt-5 sm:mt-14">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 ">
                   Frequently Asked Questions
                 </h2>
                 <div className="space-y-4 cursor-pointer">
