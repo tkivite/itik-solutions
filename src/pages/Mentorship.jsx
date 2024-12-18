@@ -1,7 +1,5 @@
-/* import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg" */ import {
-  useEffect,
-  useState,
-} from "react";
+/* import Background1 from "../assets/sean-pollock-PhYq704ffdA-unsplash.jpg" */
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Users,
@@ -42,7 +40,6 @@ const Mentorship = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 200) {
-        // You can adjust the scroll threshold here
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -314,7 +311,6 @@ const Mentorship = () => {
                           ▼
                         </motion.div>
                       </div>
-                      
 
                       {/* Show this section only if this module is expanded */}
                       {expandedModule === index && (
