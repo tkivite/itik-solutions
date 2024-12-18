@@ -1,16 +1,13 @@
 import { useRef, useState, useEffect } from "react";
-import { motion} from "framer-motion";
-import logo from "../../assets/image.svg"
+import { motion } from "framer-motion";
+import logo from "../../assets/image.svg";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
 import MobileSidebar from "./Sidebar";
-
-
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false); 
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,14 +26,11 @@ export default function Navbar() {
     };
   }, []);
 
-  
   const overlayVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 0.5, transition: { duration: 0.3 } },
     exit: { opacity: 0, transition: { duration: 0.3 } },
   };
-
- 
 
   return (
     <header
@@ -46,17 +40,10 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6 py-2 flex justify-between  relative max-h-24">
         <Link
-          to="/" 
+          to="/"
           className="text-2xl font-bold text-white hover:text-gray-300 -translate-y-14 -translate-x-12 sm:-translate-x-0"
         >
-          <img
-            src={logo} 
-            alt="logo"
-            width={270}
-            height={270}
-            
-            
-          />
+          <img src={logo} alt="logo" width={270} height={270} />
         </Link>
         <div className="md:hidden absolute top-4 right-7 z-[100]">
           <button
@@ -89,19 +76,20 @@ export default function Navbar() {
           </button>
         </div>
         <SlideTabs />
-      
-          <>
-           {isOpen && <motion.div
+
+        <>
+          {isOpen && (
+            <motion.div
               className="fixed inset-0 bg-black z-40"
               variants={overlayVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
               onClick={() => setIsOpen(false)}
-            />}
-            <MobileSidebar isOpen={isOpen} setIsOpen={setIsOpen} />
-          </>
-      
+            />
+          )}
+          <MobileSidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+        </>
       </div>
     </header>
   );
@@ -162,7 +150,7 @@ const Tab = ({ children, setPosition, link }) => {
           opacity: 1,
         });
       }}
-      to={link} 
+      to={link}
       className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs font-bold text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
     >
       {children}

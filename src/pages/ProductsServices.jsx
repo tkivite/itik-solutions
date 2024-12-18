@@ -23,7 +23,6 @@ import Footer from "../components/layout/Footer";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const productServices = [
   {
     title: "Branded Bulk Messaging",
@@ -113,8 +112,7 @@ const reasons = [
   "Proven Track Record of Successful Implementations",
   "Maximized Efficiency with Scalable Systems",
 ];
-const text =
-  "Transform your business with innovative solutions.";
+const text = "Transform your business with innovative solutions.";
 
 const ProductsServices = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -152,7 +150,6 @@ const ProductsServices = () => {
 
   return (
     <div className="relative text-neutral-dark">
- 
       <div className="fixed inset-0">
         <img
           src="https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039879/sean-pollock-PhYq704ffdA-unsplash_fjdmrv.jpg"
@@ -165,10 +162,7 @@ const ProductsServices = () => {
 
       <div className="absolute z-10 w-full mx-auto flex flex-col">
         <section className="text-center bg-transparent">
-          <h1
-            className="text-4xl font-bold text-neutral-light mt-20"
-           
-          >
+          <h1 className="text-4xl font-bold text-neutral-light mt-20">
             Our Products and Services
           </h1>
           <motion.p
@@ -264,6 +258,8 @@ const ProductsServices = () => {
             })}
           </motion.div>
         </section>
+
+        {/* Drawer with details of the product */}
         <Drawer
           anchor="right"
           open={isDrawerOpen}
@@ -277,7 +273,7 @@ const ProductsServices = () => {
             transition={{ type: "spring", stiffness: 50 }}
           >
             <motion.h2
-              className="text-2xl font-semibold text-neutral-dark mb-4 flex items-center gap-2 border-b-2 border-b-black text-primary"
+              className="text-2xl font-semibold mb-4 flex items-center gap-2 border-b-2 border-b-black text-primary"
               initial={{ y: -30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
@@ -345,6 +341,7 @@ const ProductsServices = () => {
           </motion.div>
         </Drawer>
 
+        {/* Why choose us Section */}
         <section className="grid lg:grid-cols-2 gap-8 mb-12 bg-gradient-to-br from-blue-100 via-blue-200 to-blue-100 items-center">
           <div className="order-2 lg:order-1 flex justify-center">
             <img
@@ -387,6 +384,7 @@ const ProductsServices = () => {
           </div>
         </section>
 
+        {/* Success Stories Section */}
         <section className="pb-6">
           <h2 className="text-3xl font-bold text-neutral-light mb-6 text-center">
             Client Success Stories
@@ -438,6 +436,7 @@ const ProductsServices = () => {
           </div>
         </section>
 
+        {/* Why Trust Us Section */}
         <section className="grid lg:grid-cols-2 gap-12 items-center bg-neutral-light p-2 sm:p-4">
           <div className="space-y-6 flex justify-center flex-col items-center p-2 sm:p-0 sm:w-[90%] mx-auto">
             <span className="text-primary font-medium">WHY TRUST US?</span>

@@ -1,7 +1,6 @@
 /* import innovation from "../assets/innovation.png";
 import scalability from "../assets/scalability.png";
 import efficiency from "../assets/efficiency.png";
-
 import security from "../assets/security.png";
 import customization from "../assets/customization.png"; */
 

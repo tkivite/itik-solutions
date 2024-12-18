@@ -28,25 +28,22 @@ export default function About() {
 
   return (
     <div className="relative text-neutral-dark">
-  
       <div className="fixed inset-0">
         <img
           src="https://res.cloudinary.com/dkwu8nd4d/image/upload/f_auto,q_auto/v1731039879/sean-pollock-PhYq704ffdA-unsplash_fjdmrv.jpg"
           alt="backgroundImage"
           className="object-cover w-full h-full brightness-50"
         />
+           {/* Dark overlay */}
         <div className="absolute inset-0 bg-black opacity-40"></div>{" "}
-        {/* Dark overlay */}
+     
       </div>
 
       <div className="absolute z-10 w-full mx-auto flex flex-col">
         {/* Hero Section */}
         <section className="text-center bg-transparent ">
           <div>
-            <h1
-              className="text-4xl font-bold text-neutral-light mt-20"
-             
-            >
+            <h1 className="text-4xl font-bold text-neutral-light mt-20">
               About Us
             </h1>
             <motion.p
@@ -258,12 +255,13 @@ export default function About() {
                   <p className="text-primary-dark">{member.position}</p>
                 </div>
 
-                {/* Social Media Links */}
+              
               </motion.div>
             ))}
           </div>
         </section>
 
+        {/* Work Process Section*/}
         <section className="pb-6">
           <h2 className="text-3xl font-bold text-neutral-light mb-6 text-center">
             Our Work Process
@@ -304,7 +302,6 @@ export default function About() {
                 transition={{ duration: 0.3 }}
               >
                 <div className="h-12 w-12 mx-auto mb-4">{item.icon}</div>{" "}
-                {/* Rendered the icon */}
                 <h3 className="text-lg font-semibold text-neutral-text">
                   {item.title}
                 </h3>
@@ -314,6 +311,7 @@ export default function About() {
           </div>
         </section>
 
+        {/* Elevate Business Section */}
         <section className=" bg-neutral-light p-8 text-center">
           <motion.h2
             className="text-3xl font-bold mb-4 text-neutral-text"
@@ -355,6 +353,7 @@ export default function About() {
             </motion.button>
           </div>
         </section>
+
         <Footer />
       </div>
       <button
