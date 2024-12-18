@@ -248,7 +248,7 @@ const Mentorship = () => {
                 <h2 className="text-2xl font-bold text-gray-900 mb-4 ">
                   Modules Covered
                 </h2>
-                <div className="space-y-1">
+                <div className="space-y-4">
                   {[
                     {
                       module: "Introduction to Web Application Development",
@@ -289,7 +289,7 @@ const Mentorship = () => {
                   ].map((item, index) => (
                     <motion.div
                       key={index}
-                      className="flex flex-col p-2 rounded-lg border border-gray-300 bg-gradient-to-r from-violet-50 via-transparent to-primary-dark bg-[length:200%_100%] bg-left transition-all duration-500 ease-in-out"
+                      className="flex flex-col p-4 rounded-lg border border-gray-300 bg-gradient-to-r from-violet-50 via-transparent to-primary-dark bg-[length:200%_100%] bg-left transition-all duration-500 ease-in-out"
                       initial={{ backgroundPosition: "left" }}
                       whileHover={{ backgroundPosition: "right" }}
                       transition={{ duration: 0.5 }}
