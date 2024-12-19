@@ -13,7 +13,7 @@ export default {
     },
   },
    server: {
-      port: 30015, // Custom development port (changed from default 5173)
+      port: 3009, // Custom development port (changed from default 5173)
       strictPort: true, // Fail if port is in use
     },
     preview: {
