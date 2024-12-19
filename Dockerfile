@@ -5,4 +5,4 @@ RUN yarn install --silent
 COPY . .
 RUN yarn build
 EXPOSE 3009
-CMD ["yarn", "preview"]
+CMD ["yarn", "dev"]
